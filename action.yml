@@ -1,0 +1,15 @@
+name: 'my-clj-lint-action check'
+description: 'Get started with Container actions'
+author: 'niyarin'
+inputs:
+  linters:
+    description: 'target linters'
+    default: 'all'
+  github_token:
+    description: 'Github token to report linter results back to check'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.linters}}
